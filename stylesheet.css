@@ -1,0 +1,53 @@
+body, button, input, select, textarea {
+    font-family: "Open Sans",sans-serif;
+}
+
+
+.ff-el-form-control {
+    display: block;
+    width: 50%;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #495057;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-bottom: 0;
+    max-width: 100%;
+}
+
+.ff-el-input--label  {
+    margin-bottom: 0;
+    display: inline-block;
+    font-weight: 600;
+    line-height: inherit;
+}
+
+.ff-btn-submit {
+    background-color: #409EFF;
+    color: #ffffff;
+}
+
+
+.ff_btn_style {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 4px;
+    position: relative;
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
