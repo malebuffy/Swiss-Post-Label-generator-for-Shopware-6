@@ -18,7 +18,7 @@
 	$client_id = "YourTestId";
 	$client_secret = "YourTestSecret";
 
-// Shipping labels path - MUST EXIST END WITH /
+// Shipping labels path - MUST EXIST and END WITH /
 	$spath="path to your shipping label image folder/";
 
 ?>
