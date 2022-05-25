@@ -294,7 +294,35 @@
 </select><br>
 
 <label for="Gewicht" class="ff-el-input--label">Gewicht:</label>
-<input type="text" name="gewicht" class="ff-el-form-control" value="580"><br>
+
+
+<?php
+
+// Get Weight of Order
+    
+    include 'database.php';
+	include 'config.php';
+	
+	$weight_order = 0;
+	$order_id = $_GET['id'];
+	$result = $conn->query("SELECT order_line_item.product_id, order_line_item.quantity, product.id, product.weight FROM order_line_item INNER JOIN product ON order_line_item.product_id = product.id WHERE order_line_item.order_id  = $order_id");
+	$order_line_item_weight = $result->fetch_all(MYSQLI_ASSOC);
+
+		foreach($order_line_item_weight as $line_item_weight) {  
+	        		$weight_order = $weight_order + ($line_item_weight["quantity"] * $line_item_weight["weight"]);
+                            
+	}
+	
+	$weight_order = $weight_order * 1000; //Convert to gr
+	
+	// Making sure Post query wont return an error if weight is not added into Shopware
+	if ($weight_order < 1) {
+	    $weight_order = 10;
+	}
+	
+?>
+
+<input type="text" name="gewicht" class="ff-el-form-control" value="<?php echo $weight_order; ?>"><br>
 
 <label for="versandart" class="ff-el-input--label">Versandart:</label>
 <select name="versandart"class="ff-el-form-control">
